@@ -123,7 +123,7 @@ const drawIt = (config) => {
         colorMask[`x${x}y${y}`] = `rgba(${r}, ${g}, ${b}, ${a})`;
       }
     }
-    animation(config, colorMask);
+    drawAnimationMode && animation(config, colorMask);
   };
 
   img.onload = onLoadCreator(config);
@@ -134,7 +134,7 @@ const config = {
   imgW: 480,
   imgH: 270,
   imgURL: './img/elbrus.jpg',
-  pixelSize: 3,
+  pixelSize: 5,
   drawAnimationMode: true,
   canvas: canvas,
   particlesCount: 500,
