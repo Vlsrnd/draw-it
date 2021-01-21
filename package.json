@@ -1,0 +1,16 @@
+{
+  "name": "draw-it",
+  "version": "1.0.0",
+  "description": "add canvas with image, pixelize it and animate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "canvas",
+    "pixel",
+    "image"
+  ],
+  "author": "Leonid Velichko",
+  "license": "MIT"
+}
