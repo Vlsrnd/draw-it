@@ -12,5 +12,8 @@
     "image"
   ],
   "author": "Leonid Velichko",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.18.0"
+  }
 }
