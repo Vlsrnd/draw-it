@@ -1,7 +1,6 @@
 'use strict';
 const root = document.querySelector('#root');
 
-// drawIt(config, canvas);
 class Particle {
   constructor(canvas, speed) {
     this.canvas = canvas;
@@ -57,13 +56,10 @@ class PixelPicture {
     this.image = new Image();
     this.image.src = this.imgURL;
     this.image.onload = this.onloadImgCreator;
-    // this.mediaQuery = mediaQuery;
   }
   onloadImgCreator = (event) => {
-    // debugger
     this.canvas.setAttribute('width', this.imgW);
     this.canvas.setAttribute('height', this.imgH);
-
     this.ctx.drawImage(event.currentTarget, 0, 0, this.imgW, this.imgH);
     for (let y = 0; y < this.imgH / this.pixelSize; y++) {
       for (let x = 0; x < this.imgW / this.pixelSize; x++) {
@@ -92,7 +88,6 @@ class PixelPicture {
     }
     this.drawAnimationMode && this.animation();
   }
-
   getAverageColor = (imageData) => {
     const average = (arr) => arr.reduce((acc, elem) => acc + elem) / arr.length;
     const r = [];
@@ -113,11 +108,9 @@ class PixelPicture {
     for (let i = 0; i < this.particlesCount; i++) {
       this.particles.push(new Particle(this.canvas, this.particlesSpeed));
     }
-
     const tik = () => {
       this.ctx.fillStyle = (`rgba(255,255,255, ${1 / this.particlesTailLength}`);
       this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-
       this.particles.forEach(particle => {
         this.ctx.beginPath();
         const x = Math.round(particle.x);
@@ -129,7 +122,6 @@ class PixelPicture {
         this.ctx.fill();
         this.particlesOutLine && this.ctx.stroke();
       });
-
       requestAnimationFrame(tik);
     };
     window.requestAnimationFrame(tik);
