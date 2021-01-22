@@ -10,9 +10,9 @@ class Particle {
     this.directionAngle = this.random(0, 359);
     this.speed = this.random(speed[0], speed[1]);
   }
-  random = (min, max) => {
-    Math.floor(Math.random() * (max - min) + min);
-  }
+
+  random = (min, max) => Math.floor(Math.random() * (max - min) + min);
+
   addToCanvas = (radius, canvasContext) => {
     canvasContext.arc(this.x, this.y, radius, 0, 2 * Math.PI);
   }
