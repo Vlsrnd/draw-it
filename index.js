@@ -120,7 +120,7 @@ class PixelPicture {
         particle.step();
         this.ctx.closePath();
         this.ctx.fill();
-        this.particlesOutLine && this.ctx.stroke();
+        this.particlesOutline && this.ctx.stroke();
       });
       requestAnimationFrame(tik);
     };
@@ -133,10 +133,10 @@ const config = {
   imgH: 270,
   imgURL: './img/elbrus.jpg',
   pixelSize: 5,
-  drawAnimationMode: true,
+  drawAnimationMode: false,
   particlesCount: 50,
   particlesRadius: 2,
-  particlesOutLine: false,
+  particlesOutline: true,
   particlesTailLength: 1000,
   particlesSpeed: [1, 5],
 };
